@@ -1,0 +1,3 @@
+export const logoBurgerUrl = 'https://scontent-sof1-2.xx.fbcdn.net/v/t39.30808-6/298032034_100618352765361_6648060067930849560_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=nndjzlW7TdUAX_xaw6B&_nc_oc=AQltH_jSR_y1KO1yPbSeeO-T1oLCvcSLKY-XBCF_unc8-9q1_USO5Mrdcq0osVPuNrE&_nc_ht=scontent-sof1-2.xx&oh=00_AfBXcQCn3Vtcjub1Sf1jjoRSWG34frErVAvzRSoEon_RZw&oe=6450B63D'
+export const burgers = 'https://scontent-sof1-1.xx.fbcdn.net/v/t39.30808-6/305955719_117428277751035_4350993489876414401_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=OnV59ZHXrKQAX9XARcS&_nc_ht=scontent-sof1-1.xx&oh=00_AfDqHMfZI3XMFVE5M-jqfKajd23m-DRJM7c6J9YzrSQBQA&oe=6450B315'
+
