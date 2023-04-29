@@ -1,6 +1,8 @@
+import { Modal } from '../UI/Modal'
 import styles from './Cart.module.css'
 
 export const Cart = () => {
+    
     const cartItems = [
         {
             id: 'm1',
@@ -9,7 +11,8 @@ export const Cart = () => {
             price: 22.99,
         }
     ].map((item) => <li>{item.name}</li>)
-    return <div>
+
+    return <Modal>
         <ul className={styles["cart-items"]}>{cartItems}</ul>
         <div className={styles.total}>
             <span>Total Amount</span>
@@ -19,5 +22,5 @@ export const Cart = () => {
             <button className={styles["button--alt"]} >Close</button>
             <button className={styles.button}>Oredr</button>
         </div>
-    </div>
+    </Modal>
 }
