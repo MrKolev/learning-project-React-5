@@ -6,11 +6,12 @@ import styles from './HeaderCartButton.module.css'
 export const HeaderCartButton = (
     {
         label,
-        badge
+        badge,
+        onClick
     }
 ) => {
     return (
-        <button className={styles.button}>
+        <button onClick={onClick} className={styles.button}>
             <span className={styles.icon}><CartIcon/></span>
             <span>{label}</span>
             <span className={styles.badge}>

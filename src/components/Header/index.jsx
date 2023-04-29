@@ -4,12 +4,12 @@ import { burgers } from "../../img"
 import { HeaderCartButton } from "./HeaderCartButton"
 
 
-export const Header = () => {
+export const Header = ({onShowCart}) => {
     return (
         <Fragment>
             <header className={styles.header}>
                 <h1>Burger BAR</h1>
-                <HeaderCartButton badge={3} label="You Cart" />
+                <HeaderCartButton onClick={onShowCart} badge={3} label="You Cart" />
             </header>
             <div className={styles["main-image"]}>
                 <img src={burgers} alt="burgers" />
