@@ -6,6 +6,7 @@ import { MealsItem } from "./MealsItem/MealsItem";
 export const AvailadleMeals = () => {
     const mealsList = DUMMY_MEALS.map(meal => (
         <MealsItem
+            id={meal.id}
             name={meal.name}
             description={meal.description}
             price={meal.price}
@@ -17,7 +18,7 @@ export const AvailadleMeals = () => {
     return <section className={styles.meals}>
         <Card>
             <ul>
-               {mealsList}
+                {mealsList}
             </ul>
         </Card>
     </section>
