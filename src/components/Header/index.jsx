@@ -9,7 +9,7 @@ export const Header = () => {
         <Fragment>
             <header className={styles.header}>
                 <h1>Burger BAR</h1>
-                <HeaderCartButton label="You Cart" />
+                <HeaderCartButton badge={3} label="You Cart" />
             </header>
             <div className={styles["main-image"]}>
                 <img src={burgers} alt="burgers" />
