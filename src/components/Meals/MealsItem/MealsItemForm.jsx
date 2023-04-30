@@ -24,6 +24,8 @@ export const MealItemForm = ({ id , onAddToCart}) => {
             setAmountIsValid(false);
             return
         }
+        
+        setAmountIsValid(true);
 
         onAddToCart(enteredAmoutNumber);
 

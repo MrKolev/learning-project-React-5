@@ -11,17 +11,22 @@ export const Cart = ({ onHideCart }) => {
 
     const hasItems = cartCtx.items.length > 0;
 
-    const removeItemFromCartHandler = () =>{}
-    const addItemToCartHandler = () =>{}
+    const removeItemFromCartHandler = (id) => { 
+        cartCtx.removeItem(id)
+    }
+
+    const addItemToCartHandler = (item) => {
+        cartCtx.addItem({ ...item, amount: 1 })
+    }
 
 
-    const cartItems = cartCtx.items.map((item) => <CartItem 
-    key={item.id}
-    name={item.name}
-    price={item.price}
-    amount={item.amount}
-    onRemove={removeItemFromCartHandler.bind(null, item.id)}
-    onAdd={addItemToCartHandler.bind(null, item)}
+    const cartItems = cartCtx.items.map((item) => <CartItem
+        key={item.id}
+        name={item.name}
+        price={item.price}
+        amount={item.amount}
+        onRemove={removeItemFromCartHandler.bind(null, item.id)}
+        onAdd={addItemToCartHandler.bind(null, item)}
     />)
 
     return <Modal onClose={onHideCart}>
@@ -32,7 +37,7 @@ export const Cart = ({ onHideCart }) => {
         </div>
         <div className={styles.actions}>
             <button onClick={onHideCart} className={styles["button--alt"]} >Close</button>
-          { hasItems && <button className={styles.button}>Oredr</button>}
+            {hasItems && <button className={styles.button}>Oredr</button>}
         </div>
     </Modal>
 }
