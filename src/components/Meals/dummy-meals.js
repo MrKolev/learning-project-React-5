@@ -25,5 +25,5 @@ export const DUMMY_MEALS = [
     },
   ];
 
-  export const OPTION_SHEET = ["hot chili"];
-  // "extra chese", "ketchup", "mayonnaise", "mustard", 
+  export const OPTION_SHEET = [];
+  // "extra chese", "ketchup", "mayonnaise", "mustard", "hot chili","mustard"
