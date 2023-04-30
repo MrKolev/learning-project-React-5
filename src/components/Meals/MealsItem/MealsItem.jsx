@@ -8,9 +8,9 @@ export const MealsItem = ({ name, description,price, id}) => {
             <div className={styles.description}>{description}</div>
             <div className={styles.price}>{`${price.toFixed(2)} lv.`}</div>
         </div>
-        <div>
+        
         <MealItemForm id={id}/>
-        </div>
+        
     </li>
 
 }

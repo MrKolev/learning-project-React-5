@@ -1,5 +1,5 @@
 .input {
-    display: flex;
+    display: inline-block;;
     align-items: center;
     margin-bottom: 0.5rem;
   }

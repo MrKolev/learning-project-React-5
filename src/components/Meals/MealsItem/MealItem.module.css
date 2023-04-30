@@ -1,9 +1,12 @@
 .meal {
     display: flex;
     justify-content: space-between;
-    margin: 1rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid #ccc;
+    /* border-bottom: 1px solid #ccc; */
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 14px;
+    background-color: white;
+    margin: 4px;
   }
   
   .meal h3 {

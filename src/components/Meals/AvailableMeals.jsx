@@ -12,7 +12,6 @@ export const AvailadleMeals = () => {
             price={meal.price}
             key={meal.id}
         />
-
     ));
 
     return <section className={styles.meals}>

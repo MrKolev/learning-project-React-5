@@ -24,3 +24,6 @@ export const DUMMY_MEALS = [
       price: 18.99,
     },
   ];
+
+  export const OPTION_SHEET = ["hot chili"];
+  // "extra chese", "ketchup", "mayonnaise", "mustard", 
