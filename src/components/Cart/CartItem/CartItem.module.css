@@ -63,3 +63,32 @@
   background-color: #8a2b06;
   color: white;
 }
+
+.bumpRed {
+  animation: bump 300ms ease-out;
+  border: 1px solid #b93704;
+  box-shadow: 0px 0px 8px  #bd5329;
+}
+.bumpGreen {
+  animation: bump 300ms ease-out;
+  border: 1px solid #05aa05;
+  box-shadow: 0px 0px 9px #339b33;
+}
+
+@keyframes bump {
+  0% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(0.9);
+  }
+  30% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
