@@ -61,7 +61,7 @@ const cartReduse = (state, action) => {
         }
 
         const updateTotalAmount = state.totalAmount - existingCartItem.price
-        console.log(updateTotalAmount);
+
         return {
             items: updateItems,
             totalAmount: updateTotalAmount,

@@ -5,6 +5,7 @@ import { CartContext } from "../../store/cart-context"
 import { useContext, useEffect, useState } from 'react'
 
 
+
 export const HeaderCartButton = ({ onClick }) => {
 
     const label = "You Cart"
@@ -17,15 +18,19 @@ export const HeaderCartButton = ({ onClick }) => {
     const [btnIsHighlighted, setBtnIsHighlighted] = useState(false)
 
     const buttonClass = `${styles.button} ${btnIsHighlighted ? styles.bump : ""}`
-
+    
     useEffect(() => {
         if(items.length === 0) {
             return
         }
         setBtnIsHighlighted(true);
-        setTimeout(() => {
+      const timer =  setTimeout(() => {
             setBtnIsHighlighted(false);
         },301)
+
+        return () => {
+            clearTimeout(timer)
+        };
     }, [items])
 
     return (

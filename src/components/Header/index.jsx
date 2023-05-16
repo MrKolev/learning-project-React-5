@@ -1,13 +1,9 @@
-import { Fragment} from "react"
+import { Fragment } from "react"
 import styles from "./index.module.css"
 import { burgers } from "../../img"
 import { HeaderCartButton } from "./HeaderCartButton"
 
-
-
-
-export const Header = ({onShowCart}) => {
-
+export const Header = ({ onShowCart }) => {
 
     return (
         <Fragment>

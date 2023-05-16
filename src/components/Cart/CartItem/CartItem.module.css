@@ -30,6 +30,8 @@
   padding: 0.25rem 0.75rem;
   border-radius: 6px;
   color: #363636;
+  box-shadow: 0 0 0 transparent;
+  transition: box-shadow 300ms ease-in-out;
 }
 
 .actions {
@@ -64,10 +66,21 @@
   color: white;
 }
 
+div {
+  box-shadow: 0 0 0 transparent;
+  transition: box-shadow 300ms ease-in-out;
+}
+
+div:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+
 .bumpRed {
   animation: bump 300ms ease-out;
   border: 1px solid #b93704;
-  box-shadow: 0px 0px 8px  #bd5329;
+  /* box-shadow: 0px 0px 8px  #bd5329; */
+  box-shadow: 0 0 5px rgba(237, 12, 12, 0.3);
 }
 .bumpGreen {
   animation: bump 300ms ease-out;

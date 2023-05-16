@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import styles from './CartItem.module.css';
- 
-export const CartItem = ({name,price,amount,onRemove,onAdd}) => {
+
+export const CartItem = ({ name, price, amount, onRemove, onAdd }) => {
 
   const [amountIsHighlightedGreen, setGreen] = useState(false)
   const [amountIsHighlightedRed, setRed] = useState(false)
@@ -10,22 +10,30 @@ export const CartItem = ({name,price,amount,onRemove,onAdd}) => {
   const bumpClassAmount = `${styles.amount} 
   ${amountIsHighlightedGreen ? styles.bumpGreen : ""} 
   ${amountIsHighlightedRed ? styles.bumpRed : ""}`;
-  
+
 
   useEffect(() => {
-    if(outAmount < amount){
+    if (outAmount < amount) {
       setOutAmount(amount);
       setGreen(true);
-      setTimeout(() => {
+      const timer = setTimeout(() => {
         setGreen(false);
-      },301)
-    }else{
+      }, 301)
+      return () => {
+        clearTimeout(timer);
+      }
+    } else {
       setOutAmount(amount);
       setRed(true);
-      setTimeout(() => {
+      const timer = setTimeout(() => {
         setRed(false);
-      },301)
+      }, 301)
+
+      return () => {
+        clearTimeout(timer);
+      }
     }
+
   }, [amount])
 
 
