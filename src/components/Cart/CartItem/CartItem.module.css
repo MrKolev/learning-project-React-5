@@ -66,16 +66,6 @@
   color: white;
 }
 
-div {
-  box-shadow: 0 0 0 transparent;
-  transition: box-shadow 300ms ease-in-out;
-}
-
-div:hover {
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-}
-
-
 .bumpRed {
   animation: bump 300ms ease-out;
   border: 1px solid #b93704;
