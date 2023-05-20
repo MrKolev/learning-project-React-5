@@ -4,14 +4,16 @@ import { MealsItem } from "./MealsItem/MealsItem";
 import { useEffect, useState } from "react";
 import { LoadingSpinner } from "../Spinner/LoadingSpinner";
 import { errorsImg } from "../../img";
+import { URL } from "../../URL";
 
 export const AvailadleMeals = () => {
     const [menu, setMenu] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [hasError, setHasError] = useState();
 
+    
     useEffect(() => {
-        fetch('https://react-http-640f4-default-rtdb.europe-west1.firebasedatabase.app/menu.json')
+        fetch(URL + `menu.json`)
             .then((data) => {
                 if (!data.ok) {
                     throw new Error(data.status)
@@ -43,8 +45,7 @@ export const AvailadleMeals = () => {
     }, [])
 
     if (hasError) {
-
-        return <img className={styles.err} src={errorsImg}></img>
+        return <img alt='img error' className={styles.err} src={errorsImg}></img>
     }
 
     if (isLoading) {

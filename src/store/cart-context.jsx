@@ -11,7 +11,9 @@ export const CartContext = React.createContext({
             price: 0
         }
     ) => { },
-    removeItem: (id) => { }
+    removeItem: (id) => { },
+    clearCart: () => {}
+
 });
 
 const defaultCartState = {
@@ -25,17 +27,17 @@ const cartReduse = (state, action) => {
 
         const existingCartItemsIndex = state.items.findIndex(item => item.id === action.item.id);
         const existingCartItem = state.items[existingCartItemsIndex];
-        
+
         let updateItems;
 
-        if(existingCartItem){
-           const updateItem = {
+        if (existingCartItem) {
+            const updateItem = {
                 ...existingCartItem,
                 amount: existingCartItem.amount + action.item.amount
             };
             updateItems = [...state.items];
             updateItems[existingCartItemsIndex] = updateItem;
-        }else{
+        } else {
             updateItems = state.items.concat(action.item)
         }
 
@@ -48,16 +50,16 @@ const cartReduse = (state, action) => {
     if (action.type === "REMOVE") {
         const existingCartItemsIndex = state.items.findIndex(item => item.id === action.id);
         const existingCartItem = state.items[existingCartItemsIndex];
-        
+
 
         let updateItems;
 
-        if(existingCartItem.amount === 1){            
-            updateItems= state.items.filter(item => item.id !== action.id)
+        if (existingCartItem.amount === 1) {
+            updateItems = state.items.filter(item => item.id !== action.id)
         } else {
-           const updateItem = {...existingCartItem, amount: existingCartItem.amount -1}
-           updateItems = [...state.items];
-           updateItems[existingCartItemsIndex] = updateItem;
+            const updateItem = { ...existingCartItem, amount: existingCartItem.amount - 1 }
+            updateItems = [...state.items];
+            updateItems[existingCartItemsIndex] = updateItem;
         }
 
         const updateTotalAmount = state.totalAmount - existingCartItem.price
@@ -66,6 +68,10 @@ const cartReduse = (state, action) => {
             items: updateItems,
             totalAmount: updateTotalAmount,
         }
+    }
+
+    if (action.type === "CLEAR") {
+        return defaultCartState
     }
 
 
@@ -84,11 +90,16 @@ export const CartProvider = (props) => {
         dispachCartAction({ type: "REMOVE", id: id })
     };
 
+    const clearCartHandler = () => {
+        dispachCartAction({ type: "CLEAR"})
+    };
+
     const CartContextValue = {
         items: cartState.items,
         totalAmount: cartState.totalAmount,
         addItem: addItemToCartHandler,
-        removeItem: removeItemFromCartHandler
+        removeItem: removeItemFromCartHandler,
+        clearCart: clearCartHandler
     }
 
     return (
